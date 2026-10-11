@@ -7,21 +7,17 @@ using UnityEngine.TestTools;
 public class MovementTests
 {
     [Test]
-    [TestCase(5, 5, 1, 1)]
-    public void Construction(float speed, float acceleration, float xDir, float yDir) {
+    [TestCase(5, 5)]
+    [TestCase(-4, 2)]
+    [TestCase(3, -6)]
+    [TestCase(-1, -1)]
+    public void MovementConstruction(float speed, float acceleration) {
         Movement movement = new Movement(speed, acceleration);
-        Vector2 dir = new Vector2(xDir, yDir);
 
-        float startDist = Vector2.Distance(movement.Velocity, Mathf.Abs(speed) * dir);
-
-        movement.ChangeVelocity(dir, Time.deltaTime);
-
-        float afterDist = Vector2.Distance(movement.Velocity, Mathf.Abs(speed) * dir);
-
-        Assert.Less(afterDist, startDist);
+        Assert.Greater(movement.Speed, 0);
+        Assert.Greater(movement.Acceleration, 0);
     }
 
-    private const float ERROR_MARGIN = 0f;
 
     private static IEnumerable VelocityChangesTowardsDirectionTestCases {
         get {
@@ -46,5 +42,23 @@ public class MovementTests
         }
 
         Assert.AreEqual(targetVelocity, movement.Velocity);
+    }
+
+    [Test]
+    [TestCase(5, 5, 1,1)]
+    [TestCase(-4, 2, -1, 1)]
+    [TestCase(3, -6, 1, -1)]
+    [TestCase(-1, -1, -1, -1)]
+    public void VelocitySameForSameFrame(float speed, float acceleration, float xDir, float yDir) {
+        Movement movement = new Movement(speed, acceleration);
+        Vector2 dir = new Vector2(xDir, yDir).normalized;
+
+        movement.ChangeVelocity(dir, Time.deltaTime);
+
+        Vector2 velocity = movement.Velocity;
+
+        movement.ChangeVelocity(dir, Time.deltaTime);
+
+        Assert.AreEqual(velocity, movement.Velocity);
     }
 }
