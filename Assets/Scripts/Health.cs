@@ -5,6 +5,7 @@ using UnityEngine.Events;
 [Serializable]
 public class Health
 {
+    [SerializeField]
     private int maxHealth;
     private int currentHealth;
 
