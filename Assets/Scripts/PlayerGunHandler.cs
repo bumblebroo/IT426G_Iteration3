@@ -23,6 +23,6 @@ public class PlayerGunHandler : MonoBehaviour
 
     public void MousePositionInput(InputAction.CallbackContext context) {
         mouseScreenPos = context.ReadValue<Vector2>();
-        Debug.Log("Did mouse pos input thingy");
+        Debug.Log("Did mouse pos input thingy: " + mouseScreenPos);
     }
 }

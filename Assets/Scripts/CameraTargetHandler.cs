@@ -6,6 +6,9 @@ public class CameraTargetHandler : MonoBehaviour
     private PlayerCommonData playerCommonData;
 
     [SerializeField]
+    private float percentDistance = 0.3f;
+
+    [SerializeField]
     private float maxCameraDistance;
 
     [SerializeField]
@@ -13,12 +16,13 @@ public class CameraTargetHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 targetPos = playerCommonData.MousePosition;
+        Vector2 targetPos = (Vector3)playerCommonData.MousePosition - transform.position;
+        targetPos *= percentDistance;
 
-        if (playerCommonData.MousePosition.magnitude > maxCameraDistance) {
+        if (targetPos.magnitude > maxCameraDistance) {
             targetPos = playerCommonData.MouseDir * maxCameraDistance;
         }
 
-        cameraTarget.position = targetPos;
+        cameraTarget.localPosition = targetPos;
     }
 }

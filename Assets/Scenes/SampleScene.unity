@@ -1075,7 +1075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
-  maxCameraDistance: 3
+  percentDistance: 0.3
+  maxCameraDistance: 5
   cameraTarget: {fileID: 515890182}
 --- !u!1 &1452080145
 GameObject:
