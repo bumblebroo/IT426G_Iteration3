@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class EnemyChaseBehaviour : MonoBehaviour
+{
+    [SerializeField]
+    private PlayerCommonData playerCommonData;
+
+    [SerializeField]
+    private Rigidbody2D rb;
+
+    [SerializeField]
+    private Movement movement;
+
+    void Update()
+    {
+        movement.ChangeVelocity(playerCommonData.PlayerPosition - (Vector2)transform.position, Time.deltaTime);
+        rb.linearVelocity = movement.Velocity;
+    }
+}

@@ -7,9 +7,14 @@ public class PlayerCommonData : ScriptableObject
     private Health playerHealth;
 
     [SerializeField]
+    private Vector2 playerPosition;
+
+    [SerializeField]
     private Vector2 mousePosition;
     [SerializeField]
     private Vector2 mouseDir;
+
+    public Vector2 PlayerPosition => playerPosition;
 
     public Vector2 MouseDir {
         get {
@@ -28,6 +33,7 @@ public class PlayerCommonData : ScriptableObject
     }
 
     public void SetMouseDir(Vector2 playerPosition) {
+        this.playerPosition = playerPosition;
         mouseDir = mousePosition - playerPosition;
         mouseDir.Normalize();
     }
