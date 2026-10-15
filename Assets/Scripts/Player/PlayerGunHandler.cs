@@ -7,12 +7,10 @@ public class PlayerGunHandler : MonoBehaviour
     private PlayerCommonData playerCommonData;
 
     [SerializeField]
-    private Transform pivot, firePoint;
+    private Transform pivot;
 
     [SerializeField]
-    private WeaponData weaponData;
-
-    private float lastShotTimestamp;
+    private PlayerWeapon playerWeapon;
 
     private Vector2 mouseScreenPos;
 
@@ -23,25 +21,10 @@ public class PlayerGunHandler : MonoBehaviour
 
         float angle = Mathf.Atan2(playerCommonData.MouseDir.y, playerCommonData.MouseDir.x);
         pivot.rotation = new Quaternion(0, 0, Mathf.Sin(angle / 2), Mathf.Cos(angle / 2));
-        Shoot();
+        playerWeapon.Shoot();
     }
 
     public void MousePositionInput(InputAction.CallbackContext context) {
         mouseScreenPos = context.ReadValue<Vector2>();
-    }
-
-    private void Shoot() {
-        if (!weaponData) {
-            Debug.LogWarning("Missing weapon");
-            return;
-        }
-
-        if(Time.time - lastShotTimestamp < 1 / weaponData.RPS) {
-            return;
-        }
-
-        lastShotTimestamp = Time.time;
-        Projectile projectile = ProjectileManager.Instance.GetProjectile();
-        projectile.Initialize(weaponData.ProjectileData, firePoint.position, firePoint.right);
     }
 }
