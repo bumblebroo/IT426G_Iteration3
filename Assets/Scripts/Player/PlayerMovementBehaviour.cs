@@ -16,6 +16,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
         rb.linearVelocity = (Vector3)movement.Velocity;
     }
 
+    public void TakeInput(Vector2 input) {
+        this.input = input;
+    }
+
     public void TakeInput(InputAction.CallbackContext context) {
         input = context.ReadValue<Vector2>().normalized;
     }
