@@ -109,8 +109,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
-  enemyPrefab: {fileID: 8001317002190479817, guid: a1f5a6bfcb24c814dacdb251c3bf2373, type: 3}
-  timeBetweenSpawns: 2
+  chaserPool:
+    prefab: {fileID: 8001317002190479817, guid: a1f5a6bfcb24c814dacdb251c3bf2373, type: 3}
+    objectPoolDefaultCapacity: 10
+    objectPoolMaxSize: 100
+    timeBetweenSpawns: 1
+    decayPerSpawn: 0.05
   minSpawnDistance: 19.5
   spawnCenter: {x: 0, y: 0}
   spawnDimensions: {x: 39, y: 39}

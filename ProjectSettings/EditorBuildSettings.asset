@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/PlayerProjectileTests.unity
     guid: 4a2de34edf4e9d3448337996d6c02330
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/EnemySpawnerTesting.unity
+    guid: fd2842f2c4eb09d4780f3de18bbbe28c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
