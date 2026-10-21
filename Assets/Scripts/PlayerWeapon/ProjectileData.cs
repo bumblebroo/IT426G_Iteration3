@@ -7,10 +7,10 @@ public class ProjectileData : ScriptableObject
     private Sprite sprite;
 
     [SerializeField]
-    private float speed;
+    private float speed = 1;
 
     [SerializeField]
-    private int damage;
+    private int damage = 1;
 
     public Sprite Sprite => sprite;
     public float Speed => speed;

@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class EnemyChaseBehaviour : MonoBehaviour
+public class EnemyChaseBehaviour : EnemyBehaviour
 {
-    [SerializeField]
-    private PlayerCommonData playerCommonData;
-
     [SerializeField]
     private Rigidbody2D rb;
 

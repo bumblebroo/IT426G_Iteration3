@@ -26,7 +26,9 @@ public class Projectile : MonoBehaviour
         transform.position = pos;
         transform.up = dir;
 
-        sr.sprite = projectileData.Sprite;
+        if(projectileData.Sprite != null) {
+            sr.sprite = projectileData.Sprite;
+        }
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(transform.up * projectileData.Speed, ForceMode2D.Impulse);
 
