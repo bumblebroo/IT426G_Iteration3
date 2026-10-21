@@ -32,8 +32,11 @@ public class PlayerCommonData : ScriptableObject
         mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Mathf.Abs(Camera.main.transform.position.z)));
     }
 
-    public void SetMouseDir(Vector2 playerPosition) {
-        this.playerPosition = playerPosition;
+    public void SetPlayerPosition(Vector3 pos) {
+        playerPosition = pos;
+    }
+
+    public void UpdateMouseDir() {
         mouseDir = mousePosition - playerPosition;
         mouseDir.Normalize();
     }
