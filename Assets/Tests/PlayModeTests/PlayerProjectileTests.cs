@@ -18,6 +18,7 @@ public class PlayerProjectileTests
         SceneManager.SetActiveScene(scene);
         projectileManager = ProjectileManager.Instance;
         enemyHealth = Object.FindFirstObjectByType<EnemyHealth>();
+        enemyHealth.Initalize();
         Assert.AreNotEqual(null, projectileManager);
         yield return null;
     }
@@ -67,16 +68,21 @@ public class PlayerProjectileTests
 
         ProjectileData projectileData = ScriptableObject.CreateInstance<ProjectileData>();
 
+        int projectileAmount = 5;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < projectileAmount; i++) {
             Projectile projectile = projectileManager.GetProjectile();
             projectile.Initialize(projectileData, Vector2.zero, Vector2.right * 10);
         }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector2.zero, 1);
+        Assert.AreEqual(projectileAmount, colliders.Length);
 
         enemyHealth.OnDeath.AddListener(() => hitEventsTriggered++);
 
         yield return new WaitForSeconds(1);
 
+        Assert.AreEqual(0, enemyHealth.CurrentHealth);
         Assert.AreEqual(1, hitEventsTriggered);
     }
 }

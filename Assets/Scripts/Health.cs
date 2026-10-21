@@ -16,6 +16,12 @@ public class Health
     public bool hasDied;
 
     public int CurrentHealth => currentHealth;
+
+    public void Reset() {
+        currentHealth = maxHealth;
+        hasDied = false;
+    }
+
     public Health(int maxHealth) {
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;

@@ -247,8 +247,8 @@ Transform:
   m_GameObject: {fileID: 207285273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 41, z: 1}
+  m_LocalPosition: {x: 40, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 81, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -363,7 +363,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 120
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -390,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.05, y: 18.72, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -594,7 +594,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 1}
+  m_LocalScale: {x: 80, y: 80, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -727,8 +727,8 @@ Transform:
   m_GameObject: {fileID: 968525813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
-  m_LocalScale: {x: 40, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -40, z: 0}
+  m_LocalScale: {x: 80, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -806,7 +806,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 90
+    FieldOfView: 120
     OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -834,7 +834,7 @@ Transform:
   m_GameObject: {fileID: 1452080145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.05, y: 18.72, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -968,8 +968,8 @@ Transform:
   m_GameObject: {fileID: 1635869501}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
-  m_LocalScale: {x: 40, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
+  m_LocalScale: {x: 80, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1102,8 +1102,8 @@ Transform:
   m_GameObject: {fileID: 1772170017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 41, z: 1}
+  m_LocalPosition: {x: -40, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 81, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1122,11 +1122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066714726906098469, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3066714726906098469, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3066714726906098469, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1160,6 +1160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5456428036737374469, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: movement.speed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1173,6 +1177,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: chaserPool.timeBetweenSpawns
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: recklessPool.timeBetweenSpawns
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: starPool.objectPoolDefaultCapacity
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7465833148197831682, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: m_Name
       value: EnemyManager

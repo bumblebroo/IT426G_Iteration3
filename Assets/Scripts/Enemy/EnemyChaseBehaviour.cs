@@ -10,7 +10,7 @@ public class EnemyChaseBehaviour : EnemyBehaviour
 
     void Update()
     {
-        movement.ChangeVelocity(playerCommonData.PlayerPosition - (Vector2)transform.position, Time.deltaTime);
+        movement.ChangeVelocity(PlayerCommonData.PlayerPosition - (Vector2)transform.position, Time.deltaTime);
         rb.linearVelocity = movement.Velocity;
     }
 }

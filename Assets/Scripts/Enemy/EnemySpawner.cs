@@ -11,9 +11,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private EnemyPool chaserPool = new EnemyPool();
 
+    [SerializeField]
+    private EnemyPool recklessPool = new EnemyPool();
+
+    [SerializeField]
+    private EnemyPool starPool = new EnemyPool();
 
 
     [SerializeField]
+    [Min(0)]
     private float minSpawnDistance;
 
     [SerializeField]
@@ -43,8 +49,16 @@ public class EnemySpawner : MonoBehaviour
         instance = this;
     }
 
+    private void Start() {
+        chaserPool.Start();
+        recklessPool.Start();
+        starPool.Start();
+    }
+
     private void Update() {
         SpawnEnemy(chaserPool);
+        SpawnEnemy(recklessPool);
+        SpawnEnemy(starPool);
     }
 
     private void SpawnEnemy(EnemyPool enemyPool) {

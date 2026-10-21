@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 292981839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -264,6 +264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: minSpawnDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: playerCommonData
       value: 

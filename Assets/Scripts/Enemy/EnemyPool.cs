@@ -25,7 +25,11 @@ public class EnemyPool {
     private float currentTimeBetweenSpawns;
     private float lastSpawnTimestamp = 0;
 
-    public bool CanSpawn => Time.time - lastSpawnTimestamp < currentTimeBetweenSpawns;
+    public bool CanSpawn => (Time.time - lastSpawnTimestamp) > currentTimeBetweenSpawns;
+
+    public void Start() {
+        currentTimeBetweenSpawns = timeBetweenSpawns;
+    }
 
     public EnemyPool() {
         currentTimeBetweenSpawns = timeBetweenSpawns;
@@ -75,6 +79,6 @@ public class EnemyPool {
 
     public void UpdateLastSpawn() {
         lastSpawnTimestamp = Time.time;
-        currentTimeBetweenSpawns -= Mathf.Lerp(currentTimeBetweenSpawns, 0, decayPerSpawn);
+        currentTimeBetweenSpawns -= Mathf.Lerp(0, currentTimeBetweenSpawns, decayPerSpawn);
     }
 }

@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 8359071495999555481}
   - component: {fileID: 2445498622370359133}
   - component: {fileID: 3670492246861837768}
-  - component: {fileID: 9049620726403554234}
-  - component: {fileID: 4477322840569556831}
+  - component: {fileID: -6803884988379208443}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -81,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 5830694933855508796, guid: 90d6c8c8fd1cdd54087bec90a37953e5, type: 3}
+  m_Color: {r: 0, g: 0.6117647, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -168,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    maxHealth: 5
+    maxHealth: 1
     OnDamage:
       m_PersistentCalls:
         m_Calls: []
@@ -177,21 +176,9 @@ MonoBehaviour:
         m_Calls: []
     OnDeath:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9049620726403554234}
-          m_TargetAssemblyTypeName: DestroyThisGameObjectOnEvent, Assembly-CSharp
-          m_MethodName: DestroyThis
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     hasDied: 0
---- !u!114 &9049620726403554234
+--- !u!114 &-6803884988379208443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,23 +187,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8001317002190479817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e570ec18a48e62641914a77bbd8e1682, type: 3}
+  m_Script: {fileID: 11500000, guid: d0bf1dbb361464b4aa9579e97560fb87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4477322840569556831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8001317002190479817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5827e89275d52274496735412e079451, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
+  enemyHealth: {fileID: 3670492246861837768}
   rb: {fileID: 2445498622370359133}
+  dodgeForce: 4
+  projectileDodgeRange: 2
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 128
   movement:
-    speed: 4
+    speed: 8
     acceleration: 0.2
