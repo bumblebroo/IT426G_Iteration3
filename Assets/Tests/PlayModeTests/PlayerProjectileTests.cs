@@ -76,13 +76,13 @@ public class PlayerProjectileTests
         }
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector2.zero, 1);
-        Assert.AreEqual(projectileAmount, colliders.Length);
+        Assert.AreEqual(projectileAmount, colliders.Length, "Projectiles missing or collider issue");
 
         enemyHealth.OnDeath.AddListener(() => hitEventsTriggered++);
 
         yield return new WaitForSeconds(1);
 
-        Assert.AreEqual(0, enemyHealth.CurrentHealth);
-        Assert.AreEqual(1, hitEventsTriggered);
+        Assert.AreEqual(0, enemyHealth.CurrentHealth, "Health didn't reach 0");
+        Assert.AreEqual(1, hitEventsTriggered, "Death wasn't triggered correct amount of times");
     }
 }

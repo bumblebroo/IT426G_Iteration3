@@ -29,6 +29,7 @@ public class EnemyPool {
 
     public void Start() {
         currentTimeBetweenSpawns = timeBetweenSpawns;
+        lastSpawnTimestamp = -timeBetweenSpawns;
     }
 
     public EnemyPool() {
