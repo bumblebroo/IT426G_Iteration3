@@ -52,4 +52,21 @@ public class ScoreCounterTests
             Assert.AreEqual(0, eventsTriggered);
         }
     }
+
+    [Test]
+    [TestCase(10)]
+    [TestCase(-10)]
+    public void ScoreCounterResets(int scoreDelta) {
+        ScoreCounter scoreCounter = new ScoreCounter();
+
+        scoreCounter.AddScore(scoreDelta);
+
+        if(scoreDelta > 0) {
+            Assert.AreNotEqual(0, scoreCounter.Score);
+        }
+
+        scoreCounter.Reset();
+
+        Assert.AreEqual(0, scoreCounter.Score);
+    }
 }

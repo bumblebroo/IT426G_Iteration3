@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba52fb587f4a6fd4c8699ff9660e1a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCommonData: {fileID: 0}
   scoreText: {fileID: 1161522223}
 --- !u!4 &267301024
 Transform:
@@ -1678,25 +1679,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
-      propertyPath: starPool.OnEnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 267301023}
-    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: starPool.OnEnemyDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1437672488}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
-      propertyPath: dodgePool.OnEnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 267301023}
-    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: dodgePool.OnEnemyDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1056916919}
-    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
-      propertyPath: chaserPool.OnEnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 267301023}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: chaserPool.OnEnemyDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

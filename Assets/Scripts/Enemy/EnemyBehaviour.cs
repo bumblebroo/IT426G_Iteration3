@@ -26,5 +26,12 @@ public class EnemyBehaviour : MonoBehaviour
         if(!collision.gameObject.TryGetComponent<PlayerMovementBehaviour>(out PlayerMovementBehaviour p)) {
             return;
         }
+
+        if(enemyHealth.CurrentHealth == 0) {
+            return;
+        }
+
+        playerCommonData.TakeDamage(1);
+        enemyHealth.TakeDamage(int.MaxValue);
     }
 }

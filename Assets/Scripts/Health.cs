@@ -23,6 +23,7 @@ public class Health
     }
 
     public Health(int maxHealth) {
+        maxHealth = Mathf.Abs(maxHealth);
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
         hasDied = false;

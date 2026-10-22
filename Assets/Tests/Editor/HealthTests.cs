@@ -6,10 +6,13 @@ public class HealthTests
 {
     [Test]
     [TestCase(5)]
+    [TestCase(120)]
+    [TestCase(2)]
+    [TestCase(-2350)]
     public void HealthSetMaxHealth(int maxHealth) {
         Health health = new Health(maxHealth);
 
-        Assert.AreEqual(health.CurrentHealth, maxHealth);
+        Assert.AreEqual(Mathf.Abs(maxHealth), health.CurrentHealth);
     }
 
     [Test]
@@ -82,5 +85,23 @@ public class HealthTests
         } else {
             Assert.AreEqual(0, eventsTriggered);
         }
+    }
+
+    [Test]
+    [TestCase(-2, 10)]
+    [TestCase(-6, 6)]
+    [TestCase(-6, 10)]
+    [TestCase(-10, 5)]
+    public void CurrentHealthResets(int healthDelta, int maxHealth) {
+        Health health = new Health(maxHealth);
+        health.ChangeHealth(healthDelta);
+
+        Assert.AreNotEqual(maxHealth, health.CurrentHealth);
+
+        health.Reset();
+
+        Assert.AreEqual(maxHealth, health.CurrentHealth);
+
+        Assert.AreEqual(health.CurrentHealth, maxHealth);
     }
 }

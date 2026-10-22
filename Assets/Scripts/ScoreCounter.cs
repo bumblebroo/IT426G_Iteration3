@@ -14,6 +14,10 @@ public class ScoreCounter
         score = 0;
     }
 
+    public void Reset() {
+        score = 0;
+    }
+
     public ScoreCounter(int startingScore) {
         if(startingScore < 0) {
             score = 0;

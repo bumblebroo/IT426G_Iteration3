@@ -55,9 +55,9 @@ MonoBehaviour:
     OnEnemyDeath:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
-          m_MethodName: ScoreEvent
+        - m_Target: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
+          m_TargetAssemblyTypeName: PlayerCommonData, GameCode
+          m_MethodName: IncreaseScore
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -88,9 +88,9 @@ MonoBehaviour:
     OnEnemyDeath:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
-          m_MethodName: ScoreEvent
+        - m_Target: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
+          m_TargetAssemblyTypeName: PlayerCommonData, GameCode
+          m_MethodName: IncreaseScore
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -121,9 +121,9 @@ MonoBehaviour:
     OnEnemyDeath:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
-          m_MethodName: ScoreEvent
+        - m_Target: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
+          m_TargetAssemblyTypeName: PlayerCommonData, GameCode
+          m_MethodName: IncreaseScore
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
