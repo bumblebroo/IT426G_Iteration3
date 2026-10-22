@@ -26,7 +26,7 @@ public class EnemyPool {
     private float currentTimeBetweenSpawns;
     private float lastSpawnTimestamp = 0;
 
-    public UnityEvent OnEnemyDeath;
+    public UnityEvent<Vector3> OnEnemyDeath;
 
     public bool CanSpawn => (Time.time - lastSpawnTimestamp) > currentTimeBetweenSpawns;
 
@@ -78,8 +78,8 @@ public class EnemyPool {
     }
 
     public void ReleaseEnemy(EnemyBehaviour enemy) {
+        OnEnemyDeath?.Invoke(enemy.transform.position);
         objectPool.Release(enemy);
-        OnEnemyDeath?.Invoke();
     }
 
     public void UpdateLastSpawn() {
