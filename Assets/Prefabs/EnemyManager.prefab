@@ -45,24 +45,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
-  chaserPool:
+  dodgePool:
     prefab: {fileID: 8001317002190479817, guid: a1f5a6bfcb24c814dacdb251c3bf2373, type: 3}
     objectPoolDefaultCapacity: 10
     objectPoolMaxSize: 100
-    timeBetweenSpawns: 5
-    decayPerSpawn: 0.002
-  recklessPool:
+    timeBetweenSpawns: 6
+    decayPerSpawn: 0.005
+    OnEnemyDeath:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+          m_MethodName: ScoreEvent
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 300
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  chaserPool:
     prefab: {fileID: 5383384440096508785, guid: 171cb7a88c0a23144be04940eff6fc9a, type: 3}
     objectPoolDefaultCapacity: 10
     objectPoolMaxSize: 100
-    timeBetweenSpawns: 5
-    decayPerSpawn: 0.002
+    timeBetweenSpawns: 2
+    decayPerSpawn: 0.006
+    OnEnemyDeath:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+          m_MethodName: ScoreEvent
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 100
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   starPool:
     prefab: {fileID: 871551180695714885, guid: 58ab95134f9ce254aa32603ef82a77e1, type: 3}
-    objectPoolDefaultCapacity: 10
+    objectPoolDefaultCapacity: 6
     objectPoolMaxSize: 100
-    timeBetweenSpawns: 10
-    decayPerSpawn: 0.002
+    timeBetweenSpawns: 4
+    decayPerSpawn: 0.005
+    OnEnemyDeath:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+          m_MethodName: ScoreEvent
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 200
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   minSpawnDistance: 3.5
   spawnCenter: {x: 0, y: 0}
   spawnDimensions: {x: 79, y: 79}

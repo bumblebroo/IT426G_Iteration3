@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 [System.Serializable]
@@ -24,6 +25,8 @@ public class EnemyPool {
 
     private float currentTimeBetweenSpawns;
     private float lastSpawnTimestamp = 0;
+
+    public UnityEvent OnEnemyDeath;
 
     public bool CanSpawn => (Time.time - lastSpawnTimestamp) > currentTimeBetweenSpawns;
 
@@ -76,6 +79,7 @@ public class EnemyPool {
 
     public void ReleaseEnemy(EnemyBehaviour enemy) {
         objectPool.Release(enemy);
+        OnEnemyDeath?.Invoke();
     }
 
     public void UpdateLastSpawn() {

@@ -9,10 +9,10 @@ public class EnemySpawner : MonoBehaviour
     private PlayerCommonData playerCommonData;
 
     [SerializeField]
-    private EnemyPool chaserPool = new EnemyPool();
+    private EnemyPool dodgePool = new EnemyPool();
 
     [SerializeField]
-    private EnemyPool recklessPool = new EnemyPool();
+    private EnemyPool chaserPool = new EnemyPool();
 
     [SerializeField]
     private EnemyPool starPool = new EnemyPool();
@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Vector2 spawnDimensions;
 
+    public float MinSpawnDistance => minSpawnDistance;
     public static EnemySpawner Instance => instance;
 
     private void OnValidate() {
@@ -50,14 +51,14 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void Start() {
+        dodgePool.Start();
         chaserPool.Start();
-        recklessPool.Start();
         starPool.Start();
     }
 
     private void Update() {
+        SpawnEnemy(dodgePool);
         SpawnEnemy(chaserPool);
-        SpawnEnemy(recklessPool);
         SpawnEnemy(starPool);
     }
 
