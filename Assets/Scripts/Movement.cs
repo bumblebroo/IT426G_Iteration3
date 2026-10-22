@@ -19,6 +19,10 @@ public class Movement
         this.acceleration = Mathf.Abs(acceleration);
     }
 
+    public void Reset() {
+        velocity = Vector2.zero;
+    }
+
     public void ChangeVelocity(Vector2 dir, float deltaTime) {
         velocity = Vector2.MoveTowards(velocity, dir.normalized * speed, speed * (Mathf.Abs(deltaTime) / acceleration));
     }

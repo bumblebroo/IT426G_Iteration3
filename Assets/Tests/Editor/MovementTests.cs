@@ -18,13 +18,28 @@ public class MovementTests
         Assert.Greater(movement.Acceleration, 0);
     }
 
+    [Test]
+    [TestCase(5, 5, 1, 1)]
+    [TestCase(-4, 2, -1, -1)]
+    [TestCase(3, -6, -1, 1)]
+    [TestCase(-1, -1, 1, -1)]
+    public void MovementReset(float speed, float acceleration, float xDir, float yDir) {
+        Movement movement = new Movement(speed, acceleration);
+        Vector2 dir = new Vector2(xDir, yDir).normalized;
+        Vector2 targetVelocity = dir * speed;
+
+        movement.ChangeVelocity(dir, Time.deltaTime);
+        Assert.AreNotEqual(Vector2.zero, movement.Velocity);
+        movement.Reset();
+        Assert.AreEqual(Vector2.zero, movement.Velocity);
+    }
 
     private static IEnumerable IEnumeratorSources {
         get {
             yield return new TestCaseData(3, 3, 1, 1).Returns(null);
             yield return new TestCaseData(4, 12, -1, -1).Returns(null);
             yield return new TestCaseData(2, 2, -1 , 1).Returns(null);
-            yield return new TestCaseData(100, 0.1f, -1, -1).Returns(null);
+            yield return new TestCaseData(100, 0.1f, 1, -1).Returns(null);
         }
     }
 

@@ -14,10 +14,6 @@ public class EnemyDodgeBehaviour : EnemyBehaviour
 
     [SerializeField]
     private LayerMask projectileLayer;
-
-    [SerializeField]
-    private Movement movement;
-
     public float ProjectileDodgeRange => projectileDodgeRange;
 
     void Update() {

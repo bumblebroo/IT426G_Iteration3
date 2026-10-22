@@ -17,6 +17,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private EnemyPool starPool = new EnemyPool();
 
+    [Space]
+
+    [SerializeField]
+    private ParticleHandler enemySpawnParticleHandler;
+
+    [Space]
 
     [SerializeField]
     [Min(0)]
@@ -72,6 +78,8 @@ public class EnemySpawner : MonoBehaviour
         EnemyBehaviour enemy = enemyPool.GetEnemy();
         enemy.Initalize(playerCommonData);
         enemy.transform.position = GetSpawnPos();
+
+        enemySpawnParticleHandler.SummonParticle(enemy.transform.position);
     }
 
     private Vector2 GetSpawnPos() {

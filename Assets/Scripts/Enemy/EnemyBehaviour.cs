@@ -8,6 +8,9 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private EnemyHealth enemyHealth;
 
+    [SerializeField]
+    protected Movement movement;
+
     public UnityEvent OnInit;
 
     public PlayerCommonData PlayerCommonData => playerCommonData;
@@ -15,6 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
     public virtual void Initalize(PlayerCommonData playerCommonData) {
         this.playerCommonData = playerCommonData;
         enemyHealth.Initalize();
+        movement.Reset();
         OnInit?.Invoke();
     }
 

@@ -12,9 +12,6 @@ public class EnemyRecklessBehaviour : EnemyBehaviour
 
     private Vector2 dir = new Vector2();
 
-    [SerializeField]
-    private Movement movement;
-
     void Update() {
         if(Time.time - directionSwitchTimestamp > directionSwitchCD) {
             dir = PlayerCommonData.PlayerPosition - (Vector2)transform.position;
