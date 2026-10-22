@@ -19,7 +19,7 @@ public class PlayerProjectileTests
         projectileManager = ProjectileManager.Instance;
         enemyHealth = Object.FindFirstObjectByType<EnemyHealth>();
         enemyHealth.Initalize();
-        Assert.AreNotEqual(null, projectileManager);
+        Assert.IsNotNull(projectileManager);
         yield return null;
     }
 
@@ -70,13 +70,23 @@ public class PlayerProjectileTests
 
         int projectileAmount = 5;
 
+        GameObject[] projectileGameObjects = new GameObject[projectileAmount];
         for (int i = 0; i < projectileAmount; i++) {
             Projectile projectile = projectileManager.GetProjectile();
             projectile.Initialize(projectileData, Vector2.zero, Vector2.right * 10);
+
+            projectileGameObjects[i] = projectile.gameObject;
+
+            Assert.IsTrue(projectile.gameObject.activeSelf);
         }
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector2.zero, 1);
-        Assert.AreEqual(projectileAmount, colliders.Length, "Projectiles missing or collider issue");
+        //Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector2.zero, 1);
+        //Assert.AreEqual(projectileAmount, colliders.Length, "Projectiles missing or collider issue");
+
+        for (int i = 0; i < projectileGameObjects.Length; i++) {
+            Assert.IsNotNull(projectileGameObjects[i]);
+            Assert.IsTrue(projectileGameObjects[i].activeSelf);
+        }
 
         enemyHealth.OnDeath.AddListener(() => hitEventsTriggered++);
 

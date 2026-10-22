@@ -33,7 +33,7 @@ public class EnemyTests
     [UnityTest]
     public IEnumerator CreatesEnemies() {
         yield return new WaitForEndOfFrame();
-        Assert.AreNotEqual(null, Object.FindFirstObjectByType<EnemyBehaviour>());
+        Assert.IsNotNull(Object.FindFirstObjectByType<EnemyBehaviour>());
     }
 
     [UnityTest]
@@ -42,7 +42,7 @@ public class EnemyTests
         EnemyHealth enemyHealth = Object.FindFirstObjectByType<EnemyHealth>();
         enemyHealth.TakeDamage(int.MaxValue);
 
-        Assert.AreNotEqual(null, enemyHealth.gameObject, "Enemies are nedlessly destroyed");
+        Assert.IsNotNull(enemyHealth.gameObject, "Enemies are nedlessly destroyed");
         Assert.AreEqual(false, enemyHealth.gameObject.activeSelf, "Enemies aren't being hidden");
     }
 
@@ -51,7 +51,7 @@ public class EnemyTests
         yield return new WaitForEndOfFrame();
         EnemyChaseBehaviour enemy = Object.FindFirstObjectByType<EnemyChaseBehaviour>();
 
-        Assert.AreNotEqual(null, enemy);
+        Assert.IsNotNull(enemy);
 
         Vector2 startPos = enemy.transform.position;
         Vector2 targetPos = startPos + Vector2.right * 5;
