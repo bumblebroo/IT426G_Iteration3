@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/EnemySpawnerTesting.unity
     guid: fd2842f2c4eb09d4780f3de18bbbe28c
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/EnemyChaseTest.unity
+    guid: 2e3d69970f4998448b3867ecf92ade07
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/EnemyDodgeTest.unity
+    guid: b7151517c51167d4e888d48afca63b91
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

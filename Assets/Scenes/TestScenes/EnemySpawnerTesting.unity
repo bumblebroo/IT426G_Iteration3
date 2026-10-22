@@ -266,12 +266,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: minSpawnDistance
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: playerCommonData
       value: 
       objectReference: {fileID: 11400000, guid: bfe169374e0ea4147aa8d5154c2c302c, type: 2}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: spawnDimensions.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: spawnDimensions.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7465833148197831682, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: m_Name
       value: EnemyManager

@@ -13,4 +13,10 @@ public class EnemyBehaviour : MonoBehaviour
         this.playerCommonData = playerCommonData;
         enemyHealth.Initalize();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(!collision.gameObject.TryGetComponent<PlayerMovementBehaviour>(out PlayerMovementBehaviour p)) {
+            return;
+        }
+    }
 }

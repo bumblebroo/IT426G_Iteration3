@@ -6,22 +6,16 @@ using UnityEditor;
 using UnityEngine.TestTools;
 
 [TestFixture]
-public class EnemyTests
+public class EnemySpawnerTests
 {
     private readonly string sceneName = "EnemySpawnerTesting";
     private Scene scene;
-    private EnemySpawner enemyManager;
-
-    private PlayerCommonData testingPlayerCommonData;
-    private const string playerCommonDataPath = "Assets/TestingAssets/TestingPlayerCommonData.asset";
 
     [UnitySetUp]
     public IEnumerator Setup() {
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         scene = SceneManager.GetSceneByName(sceneName);
         SceneManager.SetActiveScene(scene);
-        enemyManager = Object.FindFirstObjectByType<EnemySpawner>();
-        testingPlayerCommonData = (PlayerCommonData)AssetDatabase.LoadMainAssetAtPath(playerCommonDataPath);
     }
 
     [UnityTearDown]
@@ -44,21 +38,5 @@ public class EnemyTests
 
         Assert.IsNotNull(enemyHealth.gameObject, "Enemies are nedlessly destroyed");
         Assert.AreEqual(false, enemyHealth.gameObject.activeSelf, "Enemies aren't being hidden");
-    }
-
-    [UnityTest]
-    public IEnumerator ChaseTest() {
-        yield return new WaitForEndOfFrame();
-        EnemyChaseBehaviour enemy = Object.FindFirstObjectByType<EnemyChaseBehaviour>();
-
-        Assert.IsNotNull(enemy);
-
-        Vector2 startPos = enemy.transform.position;
-        Vector2 targetPos = startPos + Vector2.right * 5;
-        testingPlayerCommonData.SetPlayerPosition(targetPos);
-
-        yield return new WaitForSeconds(0.2f);
-
-        Assert.Less(Vector2.Distance(enemy.transform.position, targetPos), Vector2.Distance(startPos, targetPos));
     }
 }

@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5554530972081523083}
   movement:
-    speed: 10
+    speed: 15
     acceleration: 0.2
 --- !u!114 &4035388261414948324
 MonoBehaviour:

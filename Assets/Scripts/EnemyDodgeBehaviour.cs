@@ -18,14 +18,19 @@ public class EnemyDodgeBehaviour : EnemyBehaviour
     [SerializeField]
     private Movement movement;
 
+    public float ProjectileDodgeRange => projectileDodgeRange;
+
     void Update() {
         Vector2 playerDir = PlayerCommonData.PlayerPosition - (Vector2)transform.position;
+        playerDir.Normalize();
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, projectileDodgeRange, projectileLayer);
         Vector2 pos = transform.position;
         Vector2 force = pos.SeparationForce(colliders.Select(c => (Vector2)c.transform.position).ToArray(), dodgeForce);
 
-        movement.ChangeVelocity(force + playerDir, Time.deltaTime);
+        Vector2 perpendicularForce = force - (Vector2.Dot(playerDir, force) * playerDir);
+
+        movement.ChangeVelocity(perpendicularForce.normalized * force.magnitude + playerDir, Time.deltaTime);
         rb.linearVelocity = movement.Velocity;
     }
 
