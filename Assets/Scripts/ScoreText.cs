@@ -10,12 +10,12 @@ public class ScoreText : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
-    private void OnEnable() {
+    private void Start() {
         scoreText.text = playerCommonData.Score.ToString();
         playerCommonData.OnScoreIncrease.AddListener(UpdateScore);
     }
 
-    private void OnDisable() {
+    private void OnDestroy() {
         playerCommonData.OnScoreIncrease.RemoveListener(UpdateScore);
     }
 

@@ -53,4 +53,23 @@ public class EnemyChaserTests
 
         Assert.Less(Vector2.Distance(enemy.transform.position, targetPos), Vector2.Distance(startPos, targetPos));
     }
+
+    [UnityTest]
+    public IEnumerator DamageTest() {
+        int damageEventTriggered = 0;
+
+        GameObject player = new GameObject();
+        player.tag = "Player";
+        Collider2D collider = player.AddComponent<CircleCollider2D>();
+        player.transform.position = enemy.transform.position + Vector3.right * 1.5f;
+
+        testingPlayerCommonData.SetPlayerPosition(player.transform.position);
+
+        testingPlayerCommonData.OnDamage.AddListener(() => damageEventTriggered++);
+
+        yield return new WaitForSeconds(0.2f);
+
+        Assert.IsTrue(collider.IsTouching(enemy.GetComponent<Collider2D>()));
+        Assert.Greater(damageEventTriggered, 0);
+    }
 }

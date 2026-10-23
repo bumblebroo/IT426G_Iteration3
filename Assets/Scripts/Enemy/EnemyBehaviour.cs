@@ -23,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if(!collision.gameObject.TryGetComponent<PlayerMovementBehaviour>(out PlayerMovementBehaviour p)) {
+        if(!collision.gameObject.CompareTag("Player")) {
             return;
         }
 

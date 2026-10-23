@@ -23,4 +23,7 @@ MonoBehaviour:
     OnDeath:
       m_PersistentCalls:
         m_Calls: []
-    hasDied: 0
+    hasDied: 1
+  playerPosition: {x: 4.1343985, y: 9.466939}
+  mousePosition: {x: -24.372732, y: 33.83536}
+  mouseDir: {x: -0.76012886, y: 0.6497723}
