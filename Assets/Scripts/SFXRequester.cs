@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyDeathSFXHandler : MonoBehaviour
+public class SFXRequester : MonoBehaviour
 {
     [SerializeField]
     private SFXHandler sfxHandler;

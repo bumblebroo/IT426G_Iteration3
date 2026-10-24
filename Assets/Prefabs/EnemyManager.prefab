@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9122324558695321719}
   - component: {fileID: 7165848067299197746}
   m_Layer: 0
-  m_Name: DeathSFXHandler
+  m_Name: DeathSFXRequester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxHandler: {fileID: 0}
-  volume: 0.7
+  volume: 0.5
   volumeVariation: 0.05
   pitch: 0.8
   pitchVariation: 0.05
@@ -136,6 +136,7 @@ Transform:
   - {fileID: 5143454202408971612}
   - {fileID: 3014082864675895127}
   - {fileID: 9122324558695321719}
+  - {fileID: 86537060655474161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1155985699742642121
@@ -286,7 +287,33 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  enemySpawnParticleHandler: {fileID: 6505666035411995612}
+  OnEnemySpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6505666035411995612}
+        m_TargetAssemblyTypeName: ParticleHandler, GameCode
+        m_MethodName: SummonParticle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6965874378933080719}
+        m_TargetAssemblyTypeName: SFXRequester, GameCode
+        m_MethodName: PlaySFX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   minSpawnDistance: 10
   spawnCenter: {x: 0, y: 0}
   spawnDimensions: {x: 79, y: 79}
@@ -384,6 +411,60 @@ MonoBehaviour:
   particlePrefab: {fileID: 2052756665413875468, guid: 82ecf113f983cd8428db2cd9f81e3b94, type: 3}
   objectPoolDefaultCapacity: 5
   objectPoolMaxSize: 15
+--- !u!1 &8107324709686393798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86537060655474161}
+  - component: {fileID: 6965874378933080719}
+  m_Layer: 0
+  m_Name: SpawnSFXRequester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &86537060655474161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107324709686393798}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 402.86542, y: 240.78845, z: -0.047578353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7852442214936657410}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6965874378933080719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107324709686393798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b765a5f4af631ce4aadd3722c9190a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxHandler: {fileID: 0}
+  volume: 1
+  volumeVariation: 0.05
+  pitch: 1
+  pitchVariation: 0.05
+  audioClips:
+  - {fileID: 8300000, guid: 3a0091275957c64438785c7c288ce756, type: 3}
+  - {fileID: 8300000, guid: de20d7d9cbed7474ab8a7cac611488b8, type: 3}
+  - {fileID: 8300000, guid: ce4027ca5f160844ca7657a35ac49bf6, type: 3}
+  - {fileID: 8300000, guid: 8af428f3a425a4247b4c61ff9122b2e3, type: 3}
 --- !u!1 &8641833831039614011
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class EnemySpawner : MonoBehaviour
@@ -19,8 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Space]
 
-    [SerializeField]
-    private ParticleHandler enemySpawnParticleHandler;
+    public UnityEvent<Vector3> OnEnemySpawn;
 
     [Space]
 
@@ -79,7 +79,8 @@ public class EnemySpawner : MonoBehaviour
         enemy.Initalize(playerCommonData);
         enemy.transform.position = GetSpawnPos();
 
-        enemySpawnParticleHandler.SummonParticle(enemy.transform.position);
+        OnEnemySpawn?.Invoke(enemy.transform.position);
+        //enemySpawnParticleHandler.SummonParticle(enemy.transform.position);
     }
 
     private Vector2 GetSpawnPos() {
