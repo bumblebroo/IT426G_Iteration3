@@ -57,5 +57,21 @@ public class SFXHandler : MonoBehaviour
         audioSource.Play();
         StartCoroutine(ReturnAudioSource(audioSource, sfxInfo.ClipDuration));
     }
+
+    public static SFXInfo PrepareGlobalSFXInfoWithVariation(AudioClip[] audioClips, float volume, float vVar, float pitch, float pVar) {
+        int clipIndex = Random.Range(0, audioClips.Length - 1);
+        float sfxVolume = volume + Random.Range(-vVar, vVar);
+        float sfxPitch = pitch + Random.Range(-pVar, pVar);
+
+        return new SFXInfo(audioClips[clipIndex], sfxVolume, sfxPitch);
+    }
+
+    public static SFXInfo PrepareLocalSFXInfoWithVariation(AudioClip[] audioClips, float volume, float vVar, float pitch, float pVar, Vector3 pos) {
+        int clipIndex = Random.Range(0, audioClips.Length - 1);
+        float sfxVolume = volume + Random.Range(-vVar, vVar);
+        float sfxPitch = pitch + Random.Range(-pVar, pVar);
+
+        return new SFXInfo(audioClips[clipIndex], sfxVolume, sfxPitch, pos);
+    }
 }
 

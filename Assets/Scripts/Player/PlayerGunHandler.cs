@@ -23,6 +23,7 @@ public class PlayerGunHandler : MonoBehaviour
         float angle = Mathf.Atan2(playerCommonData.MouseDir.y, playerCommonData.MouseDir.x);
         pivot.rotation = new Quaternion(0, 0, Mathf.Sin(angle / 2), Mathf.Cos(angle / 2));
         playerWeapon.Shoot();
+
     }
 
     public void MousePositionInput(InputAction.CallbackContext context) {

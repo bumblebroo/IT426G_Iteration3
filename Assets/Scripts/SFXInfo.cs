@@ -11,7 +11,7 @@ public class SFXInfo {
 
     public SFXInfo(AudioClip audioClip, float volume = 1f, float pitch = 1f, Vector2? pos = null) {
         this.volume = Mathf.Clamp01(volume);
-        this.pitch = Mathf.Clamp(0, 3, pitch);
+        this.pitch = Mathf.Clamp(pitch, -3, 3);
         this.audioClip = audioClip;
         this.pos = pos;
     }

@@ -24,7 +24,7 @@ public class SFXInfoTests
 
         Assert.AreEqual(audioClip.length, sfxInfo.ClipDuration);
         Assert.AreEqual(Mathf.Clamp01(volume), audioSource.volume);
-        Assert.AreEqual(Mathf.Clamp(0, 3, pitch), audioSource.pitch);
+        Assert.AreEqual(Mathf.Clamp(pitch, -3, 3), audioSource.pitch);
         Assert.AreEqual(0, audioSource.spatialBlend);
     }
 
@@ -44,7 +44,7 @@ public class SFXInfoTests
 
         Assert.AreEqual(audioClip.length, sfxInfo.ClipDuration);
         Assert.AreEqual(Mathf.Clamp01(volume), audioSource.volume);
-        Assert.AreEqual(Mathf.Clamp(0, 3, pitch), audioSource.pitch);
+        Assert.AreEqual(Mathf.Clamp(pitch, -3, 3), audioSource.pitch);
         Assert.AreEqual(1, audioSource.spatialBlend);
         Assert.AreEqual(new Vector2(x, y), (Vector2)audioSourceGameObject.transform.position);
     }

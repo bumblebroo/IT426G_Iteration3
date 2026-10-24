@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &706664190286130803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9122324558695321719}
+  - component: {fileID: 7165848067299197746}
+  m_Layer: 0
+  m_Name: DeathSFXHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9122324558695321719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706664190286130803}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 402.86542, y: 240.78845, z: -0.047578353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7852442214936657410}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7165848067299197746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706664190286130803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b765a5f4af631ce4aadd3722c9190a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxHandler: {fileID: 0}
+  volume: 0.7
+  volumeVariation: 0.05
+  pitch: 0.8
+  pitchVariation: 0.05
+  audioClips:
+  - {fileID: 8300000, guid: 14c0b082cd2a5874692f197e47a49a94, type: 3}
+  - {fileID: 8300000, guid: e51a406579c2e104b9ab5973b57b230d, type: 3}
+  - {fileID: 8300000, guid: 311662bbc41852943b74f5d5c5922cf4, type: 3}
+  - {fileID: 8300000, guid: fd2ea39b1a4f06d49b0e6c3cdf6efbf4, type: 3}
 --- !u!1 &4935429648660353859
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +135,7 @@ Transform:
   - {fileID: 1418849421887777593}
   - {fileID: 5143454202408971612}
   - {fileID: 3014082864675895127}
+  - {fileID: 9122324558695321719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1155985699742642121
@@ -129,6 +184,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 7165848067299197746}
+          m_TargetAssemblyTypeName: EnemyDeathSFXHandler, GameCode
+          m_MethodName: PlaySFX
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 300
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   chaserPool:
     prefab: {fileID: 5383384440096508785, guid: 171cb7a88c0a23144be04940eff6fc9a, type: 3}
     objectPoolDefaultCapacity: 10
@@ -162,6 +229,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 7165848067299197746}
+          m_TargetAssemblyTypeName: EnemyDeathSFXHandler, GameCode
+          m_MethodName: PlaySFX
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 100
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   starPool:
     prefab: {fileID: 871551180695714885, guid: 58ab95134f9ce254aa32603ef82a77e1, type: 3}
     objectPoolDefaultCapacity: 6
@@ -186,6 +265,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1184528390008753613}
           m_TargetAssemblyTypeName: ParticleHandler, GameCode
           m_MethodName: SummonParticle
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 200
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7165848067299197746}
+          m_TargetAssemblyTypeName: EnemyDeathSFXHandler, GameCode
+          m_MethodName: PlaySFX
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

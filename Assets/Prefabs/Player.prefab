@@ -602,10 +602,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ba43ab65624634c8723f683f860253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxHandler: {fileID: 0}
   rps: 4
   projectileData: {fileID: 11400000, guid: 9ce5327d757f1954e8f46cf13c05fa46, type: 2}
   firePoints:
   - {fileID: 3251037047312087331}
+  audioClips:
+  - {fileID: 8300000, guid: 2d5cce4a83db619489abdb967c81c918, type: 3}
+  - {fileID: 8300000, guid: c156e0e9310c3bc48b211dd53d855054, type: 3}
+  - {fileID: 8300000, guid: 531da09dbffcb5d4eb12c2a0f82df190, type: 3}
+  - {fileID: 8300000, guid: 38290d1616f853449919caf1f7a4efd5, type: 3}
+  - {fileID: 8300000, guid: 8cea56c6bacf0824cb1247369216159d, type: 3}
+  volume: 0.08
+  volumeVariation: 0.005
+  pitch: 0.9
+  pitchVariation: 0.02
 --- !u!1 &8749415243532156859
 GameObject:
   m_ObjectHideFlags: 0
