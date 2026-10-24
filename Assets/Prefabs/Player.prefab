@@ -567,6 +567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4901050214618808070}
   - component: {fileID: 1436012628636786776}
+  - component: {fileID: 6037551953906340771}
   m_Layer: 0
   m_Name: PlayerWeapon
   m_TagString: Untagged
@@ -607,16 +608,32 @@ MonoBehaviour:
   projectileData: {fileID: 11400000, guid: 9ce5327d757f1954e8f46cf13c05fa46, type: 2}
   firePoints:
   - {fileID: 3251037047312087331}
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6037551953906340771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931019164303212836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b765a5f4af631ce4aadd3722c9190a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxHandler: {fileID: 0}
+  volume: 0.1
+  volumeVariation: 0.001
+  pitch: 0.9
+  pitchVariation: 0.01
   audioClips:
   - {fileID: 8300000, guid: 2d5cce4a83db619489abdb967c81c918, type: 3}
   - {fileID: 8300000, guid: c156e0e9310c3bc48b211dd53d855054, type: 3}
   - {fileID: 8300000, guid: 531da09dbffcb5d4eb12c2a0f82df190, type: 3}
   - {fileID: 8300000, guid: 38290d1616f853449919caf1f7a4efd5, type: 3}
   - {fileID: 8300000, guid: 8cea56c6bacf0824cb1247369216159d, type: 3}
-  volume: 0.08
-  volumeVariation: 0.005
-  pitch: 0.9
-  pitchVariation: 0.02
 --- !u!1 &8749415243532156859
 GameObject:
   m_ObjectHideFlags: 0

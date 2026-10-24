@@ -1914,6 +1914,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104223338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+  m_PrefabInstance: {fileID: 3531545623524150690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b765a5f4af631ce4aadd3722c9190a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3531545623524150690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1926,6 +1937,34 @@ PrefabInstance:
       propertyPath: sfxHandler
       value: 
       objectReference: {fileID: 670783867}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2104223338}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFXGlobal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXRequester, GameCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2034838993374837238, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1970,6 +2009,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: volume
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
+      propertyPath: sfxHandler
+      value: 
+      objectReference: {fileID: 670783867}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

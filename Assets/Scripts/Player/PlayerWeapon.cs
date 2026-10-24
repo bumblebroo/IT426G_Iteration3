@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -18,22 +19,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private float lastShotTimestamp;
 
-    [Header("SFX")]
-
-    [SerializeField]
-    private AudioClip[] audioClips;
-
-    [SerializeField]
-    private float volume;
-
-    [SerializeField]
-    private float volumeVariation;
-
-    [SerializeField]
-    private float pitch;
-
-    [SerializeField]
-    private float pitchVariation;
+    public UnityEvent OnShoot;
 
     public void Shoot() {
         if (Time.time - lastShotTimestamp < 1 / rps) {
@@ -41,7 +27,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         lastShotTimestamp = Time.time;
 
-        sfxHandler.PlaySFX(SFXHandler.PrepareGlobalSFXInfoWithVariation(audioClips, volume, volumeVariation, pitch, pitchVariation));
+        OnShoot?.Invoke();
 
         for (int i = 0; i < firePoints.Length; i++) {
             Projectile projectile = ProjectileManager.Instance.GetProjectile();
