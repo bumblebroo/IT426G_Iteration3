@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class SFXRequester : MonoBehaviour
 {
@@ -25,20 +26,29 @@ public class SFXRequester : MonoBehaviour
     public void PlaySFXGlobal() {
         if (!sfxHandler) return;
 
-        int clipIndex = Random.Range(0, audioClips.Length - 1);
-        float sfxVolume = volume + Random.Range(-volumeVariation, volumeVariation);
-        float sfxPitch = pitch + Random.Range(-pitchVariation, pitchVariation);
+        sfxHandler.PlaySFX(PrepareGlobalSFXInfoWithVariation(audioClips, volume, volumeVariation, pitch, pitchVariation));
 
-        sfxHandler.PlaySFX(new SFXInfo(audioClips[clipIndex], sfxVolume, sfxPitch));
     }
 
     public void PlaySFXLocal(Vector3 pos) {
         if (!sfxHandler) return;
 
-        int clipIndex = Random.Range(0, audioClips.Length - 1);
-        float sfxVolume = volume + Random.Range(-volumeVariation, volumeVariation);
-        float sfxPitch = pitch + Random.Range(-pitchVariation, pitchVariation);
+        sfxHandler.PlaySFX(PrepareLocalSFXInfoWithVariation(audioClips, volume, volumeVariation, pitch, pitchVariation, pos));
+    }
 
-        sfxHandler.PlaySFX(new SFXInfo(audioClips[clipIndex], sfxVolume, sfxPitch, pos));
+    public static SFXInfo PrepareGlobalSFXInfoWithVariation(AudioClip[] audioClips, float volume, float vVar, float pitch, float pVar) {
+        int clipIndex = Random.Range(0, audioClips.Length - 1);
+        float sfxVolume = volume + Random.Range(-vVar, vVar);
+        float sfxPitch = pitch + Random.Range(-pVar, pVar);
+
+        return new SFXInfo(audioClips[clipIndex], sfxVolume, sfxPitch);
+    }
+
+    public static SFXInfo PrepareLocalSFXInfoWithVariation(AudioClip[] audioClips, float volume, float vVar, float pitch, float pVar, Vector3 pos) {
+        int clipIndex = Random.Range(0, audioClips.Length - 1);
+        float sfxVolume = volume + Random.Range(-vVar, vVar);
+        float sfxPitch = pitch + Random.Range(-pVar, pVar);
+
+        return new SFXInfo(audioClips[clipIndex], sfxVolume, sfxPitch, pos);
     }
 }

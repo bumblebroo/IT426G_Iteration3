@@ -16,6 +16,8 @@ public class MovementTests
 
         Assert.Greater(movement.Speed, 0);
         Assert.Greater(movement.Acceleration, 0);
+        Assert.AreEqual(Mathf.Abs(speed), movement.Speed);
+        Assert.AreEqual(Mathf.Abs(acceleration), movement.Acceleration);
     }
 
     [Test]

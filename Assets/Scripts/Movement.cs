@@ -14,6 +14,7 @@ public class Movement
     public float Speed => speed;
     public float Acceleration => acceleration;
     public Vector2 Velocity => velocity;
+
     public Movement(float speed, float acceleration) {
         this.speed = Mathf.Abs(speed);
         this.acceleration = Mathf.Abs(acceleration);

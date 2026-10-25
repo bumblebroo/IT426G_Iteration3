@@ -8,6 +8,7 @@ public class EnemyChaseBehaviour : EnemyBehaviour
     void Update()
     {
         if (!PlayerCommonData) return;
+
         movement.ChangeVelocity(PlayerCommonData.PlayerPosition - (Vector2)transform.position, Time.deltaTime);
         rb.linearVelocity = movement.Velocity;
     }

@@ -34,6 +34,6 @@ public class PlayerHitSFXHandler : MonoBehaviour
     }
 
     private void PlaySFX() {
-        sfxHandler.PlaySFX(SFXHandler.PrepareGlobalSFXInfoWithVariation(audioClips, volume, volumeVariation, pitch, pitchVariation));
+        sfxHandler.PlaySFX(SFXRequester.PrepareGlobalSFXInfoWithVariation(audioClips, volume, volumeVariation, pitch, pitchVariation));
     }
 }

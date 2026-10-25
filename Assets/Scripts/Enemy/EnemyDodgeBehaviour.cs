@@ -18,6 +18,7 @@ public class EnemyDodgeBehaviour : EnemyBehaviour
 
     void Update() {
         if (!PlayerCommonData) return;
+
         Vector2 playerDir = PlayerCommonData.PlayerPosition - (Vector2)transform.position;
         playerDir.Normalize();
 
