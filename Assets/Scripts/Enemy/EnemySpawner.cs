@@ -10,13 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private PlayerCommonData playerCommonData;
 
     [SerializeField]
-    private EnemyPool dodgePool = new EnemyPool();
-
-    [SerializeField]
-    private EnemyPool chaserPool = new EnemyPool();
-
-    [SerializeField]
-    private EnemyPool starPool = new EnemyPool();
+    private EnemyPool[] enemyPools;
 
     [Space]
 
@@ -57,15 +51,15 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void Start() {
-        dodgePool.Start();
-        chaserPool.Start();
-        starPool.Start();
+        for (int i = 0; i < enemyPools.Length; i++) {
+            enemyPools[i].Start();
+        }
     }
 
     private void Update() {
-        SpawnEnemy(dodgePool);
-        SpawnEnemy(chaserPool);
-        SpawnEnemy(starPool);
+        for (int i = 0; i < enemyPools.Length; i++) {
+            SpawnEnemy(enemyPools[i]);
+        }
     }
 
     private void SpawnEnemy(EnemyPool enemyPool) {
@@ -81,6 +75,14 @@ public class EnemySpawner : MonoBehaviour
 
         OnEnemySpawn?.Invoke(enemy.transform.position);
         //enemySpawnParticleHandler.SummonParticle(enemy.transform.position);
+    }
+
+    public void ForceSpawn() {
+        EnemyBehaviour enemy = enemyPools[0].GetEnemy();
+        enemy.Initalize(playerCommonData);
+        enemy.transform.position = GetSpawnPos();
+
+        OnEnemySpawn?.Invoke(enemy.transform.position);
     }
 
     private Vector2 GetSpawnPos() {

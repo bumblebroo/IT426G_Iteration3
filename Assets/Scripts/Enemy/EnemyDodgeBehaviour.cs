@@ -17,6 +17,7 @@ public class EnemyDodgeBehaviour : EnemyBehaviour
     public float ProjectileDodgeRange => projectileDodgeRange;
 
     void Update() {
+        if (!PlayerCommonData) return;
         Vector2 playerDir = PlayerCommonData.PlayerPosition - (Vector2)transform.position;
         playerDir.Normalize();
 

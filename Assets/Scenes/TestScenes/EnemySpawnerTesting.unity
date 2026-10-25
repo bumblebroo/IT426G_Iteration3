@@ -280,6 +280,22 @@ PrefabInstance:
       propertyPath: spawnDimensions.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: enemyPools.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: enemyPools.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 5383384440096508785, guid: 171cb7a88c0a23144be04940eff6fc9a, type: 3}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: enemyPools.Array.data[0].objectPoolMaxSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: enemyPools.Array.data[0].objectPoolDefaultCapacity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7465833148197831682, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: m_Name
       value: EnemyManager

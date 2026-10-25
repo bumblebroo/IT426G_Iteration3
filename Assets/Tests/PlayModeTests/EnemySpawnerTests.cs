@@ -10,12 +10,14 @@ public class EnemySpawnerTests
 {
     private readonly string sceneName = "EnemySpawnerTesting";
     private Scene scene;
+    private EnemySpawner enemySpawner;
 
     [UnitySetUp]
     public IEnumerator Setup() {
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         scene = SceneManager.GetSceneByName(sceneName);
         SceneManager.SetActiveScene(scene);
+        enemySpawner = Object.FindFirstObjectByType<EnemySpawner>();
     }
 
     [UnityTearDown]
@@ -38,5 +40,19 @@ public class EnemySpawnerTests
 
         Assert.IsNotNull(enemyHealth.gameObject, "Enemies are nedlessly destroyed");
         Assert.AreEqual(false, enemyHealth.gameObject.activeSelf, "Enemies aren't being hidden");
+    }
+
+    [UnityTest]
+    public IEnumerator EnemyMinSpawnDistance() {
+        int checkCount = 1000;
+
+        for (int i = 0; i < checkCount; i++) {
+            enemySpawner.ForceSpawn();
+        }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector2.zero, 1f);
+
+        Assert.AreEqual(0, colliders.Length);
+        yield return null;
     }
 }

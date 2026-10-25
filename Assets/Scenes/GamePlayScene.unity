@@ -609,8 +609,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.9997434
-    height: 1
+    width: 1
+    height: 0.99976003
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 120
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0ad5db6e126fe6240adcb17d802a4e40, type: 3}
   - {fileID: 8300000, guid: c17cc671ec9c15143b862e0366bd98d6, type: 3}
   - {fileID: 8300000, guid: 2da96adf3e68e7b4589168696e34740e, type: 3}
-  volume: 0.79
+  volume: 1
   volumeVariation: 0.01
   pitch: 0.9
   pitchVariation: 0.03
@@ -2011,7 +2011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: volume
-      value: 0.07
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: sfxHandler
@@ -2030,6 +2030,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6965874378933080719, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: volume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6965874378933080719, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: sfxHandler
       value: 

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxHandler: {fileID: 0}
-  volume: 0.5
+  volume: 0.8
   volumeVariation: 0.05
   pitch: 0.8
   pitchVariation: 0.05
@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
-  dodgePool:
-    prefab: {fileID: 8001317002190479817, guid: a1f5a6bfcb24c814dacdb251c3bf2373, type: 3}
+  enemyPools:
+  - prefab: {fileID: 8001317002190479817, guid: a1f5a6bfcb24c814dacdb251c3bf2373, type: 3}
     objectPoolDefaultCapacity: 10
-    objectPoolMaxSize: 100
+    objectPoolMaxSize: 30
     timeBetweenSpawns: 6
     decayPerSpawn: 0.01
     OnEnemyDeath:
@@ -180,7 +180,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 300
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -192,17 +192,16 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 300
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  chaserPool:
-    prefab: {fileID: 5383384440096508785, guid: 171cb7a88c0a23144be04940eff6fc9a, type: 3}
+  - prefab: {fileID: 5383384440096508785, guid: 171cb7a88c0a23144be04940eff6fc9a, type: 3}
     objectPoolDefaultCapacity: 10
-    objectPoolMaxSize: 100
+    objectPoolMaxSize: 30
     timeBetweenSpawns: 2
-    decayPerSpawn: 0.01
+    decayPerSpawn: 0.012
     OnEnemyDeath:
       m_PersistentCalls:
         m_Calls:
@@ -225,7 +224,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 100
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -237,17 +236,16 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 100
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  starPool:
-    prefab: {fileID: 871551180695714885, guid: 58ab95134f9ce254aa32603ef82a77e1, type: 3}
-    objectPoolDefaultCapacity: 6
-    objectPoolMaxSize: 100
+  - prefab: {fileID: 871551180695714885, guid: 58ab95134f9ce254aa32603ef82a77e1, type: 3}
+    objectPoolDefaultCapacity: 5
+    objectPoolMaxSize: 30
     timeBetweenSpawns: 4
-    decayPerSpawn: 0.01
+    decayPerSpawn: 0.011
     OnEnemyDeath:
       m_PersistentCalls:
         m_Calls:
@@ -270,7 +268,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 200
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -282,7 +280,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 200
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -457,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxHandler: {fileID: 0}
   volume: 1
-  volumeVariation: 0.05
+  volumeVariation: 0
   pitch: 1
   pitchVariation: 0.05
   audioClips:
