@@ -20,7 +20,7 @@ public class SFXInfoTests
         Assert.IsNotNull(audioClip, "Missing audioClip");
 
         SFXInfo sfxInfo = new SFXInfo(audioClip, volume, pitch);
-        sfxInfo.ConfigureAudioSource(ref audioSource);
+        sfxInfo.ConfigureAudioSource(audioSource);
 
         Assert.AreEqual(audioClip.length, sfxInfo.ClipDuration);
         Assert.AreEqual(Mathf.Clamp01(volume), audioSource.volume);
@@ -40,7 +40,7 @@ public class SFXInfoTests
         Assert.IsNotNull(audioClip, "Missing audioClip");
 
         SFXInfo sfxInfo = new SFXInfo(audioClip, volume, pitch, new Vector2(x,y));
-        sfxInfo.ConfigureAudioSource(ref audioSource);
+        sfxInfo.ConfigureAudioSource(audioSource);
 
         Assert.AreEqual(audioClip.length, sfxInfo.ClipDuration);
         Assert.AreEqual(Mathf.Clamp01(volume), audioSource.volume);

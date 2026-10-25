@@ -12,10 +12,16 @@ public class EnemySpawnerTests
     private Scene scene;
     private EnemySpawner enemySpawner;
 
+    private PlayerCommonData testingPlayerCommonData;
+    private const string playerCommonDataPath = "Assets/TestingAssets/TestingPlayerCommonData.asset";
+
     [UnitySetUp]
     public IEnumerator Setup() {
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         scene = SceneManager.GetSceneByName(sceneName);
+
+        testingPlayerCommonData = (PlayerCommonData)AssetDatabase.LoadMainAssetAtPath(playerCommonDataPath);
+
         SceneManager.SetActiveScene(scene);
         enemySpawner = Object.FindFirstObjectByType<EnemySpawner>();
     }
@@ -42,15 +48,30 @@ public class EnemySpawnerTests
         Assert.AreEqual(false, enemyHealth.gameObject.activeSelf, "Enemies aren't being hidden");
     }
 
+    private const float minDistance = 1;
+    private const float enemyColliderRadius = 0.5f;
+    private const int checkCount = 100;
+
+    private static IEnumerable EnemyMinSpawnDistanceTestCases {
+        get {
+            yield return new TestCaseData(-2, 2).Returns(null);
+            yield return new TestCaseData(2, 2).Returns(null);
+            yield return new TestCaseData(2, 1).Returns(null);
+            yield return new TestCaseData(2, -2).Returns(null);
+        }
+    }
+
     [UnityTest]
-    public IEnumerator EnemyMinSpawnDistance() {
-        int checkCount = 1000;
+    [TestCaseSource(nameof(EnemyMinSpawnDistanceTestCases))]
+    public IEnumerator EnemyMinSpawnDistance(float x, float y) {
+        Vector2 pos = new Vector2(x, y);
+        testingPlayerCommonData.SetPlayerPosition(pos);
 
         for (int i = 0; i < checkCount; i++) {
             enemySpawner.ForceSpawn();
         }
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector2.zero, 1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(pos, minDistance - enemyColliderRadius);
 
         Assert.AreEqual(0, colliders.Length);
         yield return null;

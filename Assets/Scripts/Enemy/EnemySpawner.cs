@@ -4,8 +4,6 @@ using UnityEngine.Pool;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private static EnemySpawner instance;
-
     [SerializeField]
     private PlayerCommonData playerCommonData;
 
@@ -29,7 +27,6 @@ public class EnemySpawner : MonoBehaviour
     private Vector2 spawnDimensions;
 
     public float MinSpawnDistance => minSpawnDistance;
-    public static EnemySpawner Instance => instance;
 
     private void OnValidate() {
         if(minSpawnDistance * 2 > spawnDimensions.x) {
@@ -39,15 +36,6 @@ public class EnemySpawner : MonoBehaviour
         if (minSpawnDistance * 2 > spawnDimensions.y) {
             minSpawnDistance = spawnDimensions.y / 2;
         }
-    }
-
-
-    private void Awake() {
-        if(instance != null) {
-            Destroy(this.gameObject);
-        }
-
-        instance = this;
     }
 
     private void Start() {
@@ -74,9 +62,9 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.position = GetSpawnPos();
 
         OnEnemySpawn?.Invoke(enemy.transform.position);
-        //enemySpawnParticleHandler.SummonParticle(enemy.transform.position);
     }
 
+    // Used for tests
     public void ForceSpawn() {
         EnemyBehaviour enemy = enemyPools[0].GetEnemy();
         enemy.Initalize(playerCommonData);

@@ -8,7 +8,7 @@ public class PlayerCommonData : ScriptableObject
     [SerializeField]
     private Health playerHealth;
 
-    private ScoreCounter scoreCounter;
+    private ScoreCounter scoreCounter = new ScoreCounter();
 
     [SerializeField]
     private Vector2 playerPosition;

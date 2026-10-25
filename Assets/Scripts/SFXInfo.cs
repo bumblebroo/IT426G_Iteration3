@@ -16,7 +16,7 @@ public class SFXInfo {
         this.pos = pos;
     }
 
-    public void ConfigureAudioSource(ref AudioSource audioSource) {
+    public void ConfigureAudioSource(AudioSource audioSource) {
         audioSource.volume = volume;
         audioSource.pitch = pitch;
         audioSource.clip = audioClip;

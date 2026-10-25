@@ -64,7 +64,6 @@ public class EnemyPool {
     }
 
     private void OnReleaseEnemy(EnemyBehaviour enemy) {
-        //enemy.DeInitialize();
         enemy.gameObject.SetActive(false);
     }
 

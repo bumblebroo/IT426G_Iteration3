@@ -53,7 +53,7 @@ public class SFXHandler : MonoBehaviour
 
     public void PlaySFX(SFXInfo sfxInfo) {
         AudioSource audioSource = objectPool.Get();
-        sfxInfo.ConfigureAudioSource(ref audioSource);
+        sfxInfo.ConfigureAudioSource(audioSource);
         audioSource.Play();
         StartCoroutine(ReturnAudioSource(audioSource, sfxInfo.ClipDuration));
     }

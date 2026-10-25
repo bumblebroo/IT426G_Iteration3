@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class SFXRequester : MonoBehaviour
 {
@@ -27,7 +26,6 @@ public class SFXRequester : MonoBehaviour
         if (!sfxHandler) return;
 
         sfxHandler.PlaySFX(PrepareGlobalSFXInfoWithVariation(audioClips, volume, volumeVariation, pitch, pitchVariation));
-
     }
 
     public void PlaySFXLocal(Vector3 pos) {
