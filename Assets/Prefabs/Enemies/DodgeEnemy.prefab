@@ -159,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 8001317002190479817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9471502, y: -6.26, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bf1dbb361464b4aa9579e97560fb87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 2445498622370359133}
   enemyHealth: {fileID: 3670492246861837768}
   movement:
     speed: 8
@@ -327,7 +328,6 @@ MonoBehaviour:
   OnInit:
     m_PersistentCalls:
       m_Calls: []
-  rb: {fileID: 2445498622370359133}
   dodgeForce: 12
   projectileDodgeRange: 6
   projectileLayer:

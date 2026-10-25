@@ -67,16 +67,14 @@ public class EnemySpawner : MonoBehaviour
     // Used for tests
     public void ForceSpawn() {
         EnemyBehaviour enemy = enemyPools[0].GetEnemy();
-        enemy.Initalize(playerCommonData);
         enemy.transform.position = GetSpawnPos();
-
         OnEnemySpawn?.Invoke(enemy.transform.position);
     }
 
     private Vector2 GetSpawnPos() {
         Vector2 spawnPos = spawnCenter + new Vector2(Random.Range(-spawnDimensions.x / 2, spawnDimensions.x / 2), Random.Range(-spawnDimensions.y / 2, spawnDimensions.y / 2));
 
-        if (spawnPos.IsWithinDistance(playerCommonData.PlayerPosition, minSpawnDistance)) {
+        if(Vector2.Distance(spawnPos, playerCommonData.PlayerPosition) < minSpawnDistance) {
             return GetSpawnPos();
         }
 

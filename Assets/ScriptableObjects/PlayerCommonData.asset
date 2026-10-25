@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerCommonData
   m_EditorClassIdentifier: 
   playerHealth:
-    maxHealth: 3
+    maxHealth: 5
     OnDamage:
       m_PersistentCalls:
         m_Calls: []

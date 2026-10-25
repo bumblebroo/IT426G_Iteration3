@@ -11,6 +11,8 @@ public class RotateTowardsPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!enemyBehaviour.PlayerCommonData) return;
+
         Vector2 dir = enemyBehaviour.PlayerCommonData.PlayerPosition - (Vector2)rotationTransform.position;
         dir.Normalize();
 

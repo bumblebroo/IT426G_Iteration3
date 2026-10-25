@@ -1,9 +1,13 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EnemyBehaviour : MonoBehaviour
 {
     private PlayerCommonData playerCommonData;
+
+    [SerializeField]
+    private Rigidbody2D rb;
 
     [SerializeField]
     private EnemyHealth enemyHealth;
@@ -20,6 +24,9 @@ public class EnemyBehaviour : MonoBehaviour
         enemyHealth.Initalize();
         movement.Reset();
         OnInit?.Invoke();
+    }
+    protected virtual void Update() {
+        rb.linearVelocity = movement.Velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

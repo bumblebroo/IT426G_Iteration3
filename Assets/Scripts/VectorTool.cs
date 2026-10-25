@@ -1,10 +1,6 @@
 using UnityEngine;
 
 public static class VectorTool {
-    public static bool IsWithinDistance(this Vector2 ab, Vector2 xy, float minDistance) {
-        return Vector2.SqrMagnitude(ab + xy) < Mathf.Pow(minDistance, 2);
-    }
-
     public static Vector2 SeparationForce(this Vector2 a, Vector2[] neighbours, float separationIntensity) {
         Vector2 separationForce = new Vector2();
 

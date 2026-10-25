@@ -609,7 +609,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.99976003
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 120
@@ -832,55 +832,6 @@ MonoBehaviour:
   prefab: {fileID: 5284245275573024685, guid: 054b169680263854b99a175c4a3089e3, type: 3}
   defaultCapacity: 10
   maxSize: 20
---- !u!1 &673452657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 673452659}
-  - component: {fileID: 673452660}
-  m_Layer: 8
-  m_Name: PostProcessingVolume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &673452659
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673452657}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &673452660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673452657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 6b1d2bc0f2bcf114f9de5ecec10544b1, type: 2}
 --- !u!1 &714939572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,16 +1779,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxHandler: {fileID: 670783867}
-  playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
+  volume: 1
+  volumeVariation: 0.01
+  pitch: 0.9
+  pitchVariation: 0.03
   audioClips:
   - {fileID: 8300000, guid: 5a453f9cdcea1be45b356257fc6cb290, type: 3}
   - {fileID: 8300000, guid: 0ad5db6e126fe6240adcb17d802a4e40, type: 3}
   - {fileID: 8300000, guid: c17cc671ec9c15143b862e0366bd98d6, type: 3}
   - {fileID: 8300000, guid: 2da96adf3e68e7b4589168696e34740e, type: 3}
-  volume: 1
-  volumeVariation: 0.01
-  pitch: 0.9
-  pitchVariation: 0.03
+  playerCommonData: {fileID: 11400000, guid: 938d6ed302b861147ac70aa048051389, type: 2}
 --- !u!4 &1936464302
 Transform:
   m_ObjectHideFlags: 0
@@ -1853,17 +1804,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2104223338 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-  m_PrefabInstance: {fileID: 3531545623524150690}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b765a5f4af631ce4aadd3722c9190a1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3531545623524150690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1876,41 +1816,9 @@ PrefabInstance:
       propertyPath: sfxHandler
       value: 
       objectReference: {fileID: 670783867}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2104223338}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySFXGlobal
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SFXRequester, GameCode
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436012628636786776, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2034838993374837238, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2227935540963096461, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3066714726906098469, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1951,10 +1859,6 @@ PrefabInstance:
     - target: {fileID: 3066714726906098469, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
-      propertyPath: volume
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6037551953906340771, guid: e908de4fa2ea6c64a9ef4fd2b53c666c, type: 3}
       propertyPath: sfxHandler
@@ -2101,7 +2005,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1452080148}
-  - {fileID: 673452659}
   - {fileID: 619394802}
   - {fileID: 805350963}
   - {fileID: 1772170020}

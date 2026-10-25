@@ -48,8 +48,8 @@ public class EnemySpawnerTests
         Assert.AreEqual(false, enemyHealth.gameObject.activeSelf, "Enemies aren't being hidden");
     }
 
-    private const float minDistance = 1;
-    private const float enemyColliderRadius = 0.5f;
+    private const float minDistance = 30;
+    private const float enemyColliderRadius = 0.6f;
     private const int checkCount = 100;
 
     private static IEnumerable EnemyMinSpawnDistanceTestCases {
@@ -71,9 +71,16 @@ public class EnemySpawnerTests
             enemySpawner.ForceSpawn();
         }
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(pos, minDistance - enemyColliderRadius);
+        EnemyBehaviour[] enemies = GameObject.FindObjectsByType<EnemyBehaviour>(FindObjectsSortMode.None);
 
-        Assert.AreEqual(0, colliders.Length);
+        int countInMinDistance = 0;
+        for (int i = 0; i < checkCount; i++) {
+            if (Vector2.Distance(pos, enemies[i].transform.position) < minDistance) {
+                countInMinDistance++;
+            }
+        }
+
+        Assert.AreEqual(0, countInMinDistance);
         yield return null;
     }
 }

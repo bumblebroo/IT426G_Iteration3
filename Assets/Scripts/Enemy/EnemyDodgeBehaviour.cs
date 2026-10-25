@@ -4,9 +4,6 @@ using UnityEngine;
 public class EnemyDodgeBehaviour : EnemyBehaviour
 {
     [SerializeField]
-    private Rigidbody2D rb;
-
-    [SerializeField]
     private float dodgeForce;
 
     [SerializeField]
@@ -16,7 +13,7 @@ public class EnemyDodgeBehaviour : EnemyBehaviour
     private LayerMask projectileLayer;
     public float ProjectileDodgeRange => projectileDodgeRange;
 
-    void Update() {
+    protected override void Update() {
         if (!PlayerCommonData) return;
 
         Vector2 playerDir = PlayerCommonData.PlayerPosition - (Vector2)transform.position;
@@ -29,7 +26,7 @@ public class EnemyDodgeBehaviour : EnemyBehaviour
         Vector2 perpendicularForce = force - (Vector2.Dot(playerDir, force) * playerDir);
 
         movement.ChangeVelocity(perpendicularForce.normalized * force.magnitude + playerDir, Time.deltaTime);
-        rb.linearVelocity = movement.Velocity;
+        base.Update();
     }
 
     private void OnDrawGizmos() {

@@ -266,7 +266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: minSpawnDistance
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: playerCommonData
@@ -274,11 +274,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bfe169374e0ea4147aa8d5154c2c302c, type: 2}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: spawnDimensions.x
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: spawnDimensions.y
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: enemyPools.Array.size
@@ -289,8 +289,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5383384440096508785, guid: 171cb7a88c0a23144be04940eff6fc9a, type: 3}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: enemyPools.Array.data[0].decayPerSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: enemyPools.Array.data[0].objectPoolMaxSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
+      propertyPath: enemyPools.Array.data[0].timeBetweenSpawns
+      value: 133.68
       objectReference: {fileID: 0}
     - target: {fileID: 1155985699742642121, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: enemyPools.Array.data[0].objectPoolDefaultCapacity
