@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxHandler: {fileID: 0}
-  volume: 0.8
+  volume: 0.75
   volumeVariation: 0.05
   pitch: 0.8
   pitchVariation: 0.05
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxHandler: {fileID: 0}
-  volume: 1
+  volume: 0.7
   volumeVariation: 0
   pitch: 1
   pitchVariation: 0.05

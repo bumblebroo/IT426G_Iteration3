@@ -28,11 +28,6 @@ public class PlayerCommonData : ScriptableObject
 
     public Vector2 PlayerPosition => playerPosition;
 
-    public void Initalize() {
-        playerHealth.Reset();
-        scoreCounter.Reset();
-    }
-
     public Vector2 MouseDir {
         get {
             return mouseDir;
@@ -43,6 +38,11 @@ public class PlayerCommonData : ScriptableObject
         get {
             return mousePosition;
         }
+    }
+
+    public void Initalize() {
+        playerHealth.Reset();
+        scoreCounter.Reset();
     }
 
     public void SetMousePosition(Vector2 mouseScreenPosition) {

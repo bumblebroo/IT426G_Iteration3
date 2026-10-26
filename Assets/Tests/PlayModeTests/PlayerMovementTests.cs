@@ -47,7 +47,7 @@ public class PlayerMovementTests
         yield return new WaitForSeconds(player.Acceleration);
 
         Assert.AreEqual(Vector2.zero, player.CurrentVelocity, "Player isn't still");
-
+        
         float x = player.transform.position.x;
         player.TakeInputRaw(-Vector2.right);
         yield return new WaitForSeconds(player.Acceleration);

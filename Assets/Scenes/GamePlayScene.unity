@@ -1878,17 +1878,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6965874378933080719, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
-      propertyPath: volume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965874378933080719, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: sfxHandler
       value: 
       objectReference: {fileID: 670783867}
-    - target: {fileID: 7165848067299197746, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
-      propertyPath: volume
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 7165848067299197746, guid: c59185b6c23269545a9695ffb15d39ea, type: 3}
       propertyPath: sfxHandler
       value: 

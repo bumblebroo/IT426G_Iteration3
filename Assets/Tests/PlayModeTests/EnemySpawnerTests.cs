@@ -49,7 +49,6 @@ public class EnemySpawnerTests
     }
 
     private const float minDistance = 30;
-    private const float enemyColliderRadius = 0.6f;
     private const int checkCount = 100;
 
     private static IEnumerable EnemyMinSpawnDistanceTestCases {
