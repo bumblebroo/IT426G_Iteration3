@@ -29,6 +29,9 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        //Helps with turning when colliding with wall
+        movement.ChangeVelocity(collision.GetContact(0).normal, Time.deltaTime);
+
         if(!collision.gameObject.CompareTag("Player")) {
             return;
         }
